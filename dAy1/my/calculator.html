@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            background-color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            width:30px;
+            height:30px;
+            font-size:20px;
+            font-weight:bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .button:hover {
+            background-color: #ffffff;
+        }
+
+        .input {
+            flex: 1;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 20px;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+        }
+         .input-container {
+            width:280px;
+            height:40px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:rgb(14, 108, 96);margin-left:640px;">Masai Calculator</h1>
+    <div class="calculator">
+        <div class="input-container"style="margin-top:20px;"></div>
+        <input type="text" class="input" disabled>
+        <div class="row" style="margin-top:-50px;">
+            <div class="button">1</div>
+            <div class="button">2</div>
+            <div class="button">3</div>
+            <div class="button" style="background-color: black;color:white;">+</div>
+        </div>
+        <div class="row">
+            <div class="button">4</div>
+            <div class="button">5</div>
+            <div class="button">6</div>
+            <div class="button" style="background-color: black;color:white;">-</div>
+        </div>
+        <div class="row">
+            <div class="button">7</div>
+            <div class="button">8</div>
+            <div class="button">9</div>
+            <div class="button" style="background-color: black;color:white;">x</div>
+        </div>
+        <div class="row">
+            <div class="button" style="background-color: rgb(254, 0, 0);color:white;">C</div>
+            <div class="button">0</div>
+            <div class="button" style="background-color: black;color:white;">=</div>
+            <div class="button" style="background-color: black;color:white;">/</div>
+        </div>
+    </div>
+</body>
+</html>
