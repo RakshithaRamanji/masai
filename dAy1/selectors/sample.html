@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(18, 1fr); /* 18 columns for groups */
+            gap: 5px; /* Gap between cells */
+            padding: 10px;
+        }
+
+        .element {
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .alkali {
+            background-color: #FF4500; /* Orange-Red */
+            color: white;
+        }
+
+        .alkaline-earth {
+            background-color: #FF8C00; /* Dark Orange */
+            color: white;
+        }
+
+        .transition-metal {
+            background-color: #FFD700; /* Gold */
+        }
+
+        .post-transition-metal {
+            background-color: #A9A9A9; /* Dark Gray */
+            color: white;
+        }
+
+        /* Add more classes for other groups and properties */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="element alkali">H</div>
+        <div class="element alkali">Li</div>
+        <div class="element alkali">Na</div>
+        <div class="element alkali">K</div>
+        <div class="element alkali">Rb</div>
+        <!-- Continue adding cells for alkali group elements -->
+
+        <div class="element alkaline-earth">Be</div>
+        <div class="element alkaline-earth">Mg</div>
+        <div class="element alkaline-earth">Ca</div>
+        <div class="element alkaline-earth">Sr</div>
+        <div class="element alkaline-earth">Ba</div>
+        <!-- Continue adding cells for alkaline earth group elements -->
+
+        <div class="element transition-metal">Sc</div>
+        <div class="element transition-metal">Ti</div>
+        <div class="element transition-metal">V</div>
+        <div class="element transition-metal">Cr</div>
+        <div class="element transition-metal">Mn</div>
+        <!-- Continue adding cells for transition metal group elements -->
+
+        <div class="element post-transition-metal">Al</div>
+        <div class="element post-transition-metal">Ga</div>
+        <div class="element post-transition-metal">In</div>
+        <div class="element post-transition-metal">Sn</div>
+        <div class="element post-transition-metal">Pb</div>
+        <!-- Continue adding cells for post-transition metal group elements -->
+
+        <!-- Add cells for other groups and elements -->
+    </div>
+</body>
+</html>

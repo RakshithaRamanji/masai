@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+</head>
+<style>
+     .container {
+        display: flex;
+        justify-content:baseline;
+        align-items: center;
+    }
+
+    .column {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 1 column inside each column container */
+    }
+
+    .item {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        text-align: center;
+        border:3px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #id1 .item {
+        background-color: rgba(70, 106, 4, 0.84);
+        color: white;
+    }
+
+    #id2 .item {
+        background-color:rgb(246, 101, 85);
+        color: black;
+        font-weight:bold;
+    }
+    #id3 .item {
+        background-color:bisque;
+        color: white;
+        border:5px solid black ;
+        width: 45px;
+        height:45px;
+    }
+    #id4 .item {
+        background-color:blue;
+        color: white;
+    }
+    #id5 .item {
+        background-color:rgb(221, 29, 100);
+        color: white;
+    }
+    #id6 .item {
+        background-color:rgb(231, 210, 59);
+        color: white;
+    }
+    .row {
+        display: flex;
+        
+    }
+
+    .box {
+        width: 40px;
+        height:40px;
+        background-color:#123a22;
+        border:2px solid black ;
+        margin-right: -5px;
+    }
+    .box2 {
+        width: 40px;
+        height:40px;
+        background-color: rgba(50, 76, 3, 0.84);
+        border:2px solid black;
+        border-top:0px solid black;
+        margin-right: -5px;
+    }
+    .big{
+        width: 160px;
+        height:160px;
+        background-color: rgba(70, 106, 4, 0.84);
+        color: white;
+        border:2px solid black;
+    }
+    
+
+</style>
+<body>
+    <h1 style="margin-left:300px ;">THE PERIODIC TABLE OF ELEMENTS</h1>
+    <div class="container">
+        <div id="id1" class="column">
+            <div class="item" style="background-color:maroon;color:white;font-size:xx-large;">H</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id2" class="column">
+            <div class="item" style="margin-top:85px;">4</div>
+            <div class="item">12</div>
+            <div class="item">20</div>
+            <div class="item">38</div>
+            <div class="item">56</div>
+            <div class="item">88</div>
+        </div>
+        <div id="id3" class="column">
+            <div class="item" style="margin-top:385px;"></div>
+            <div class="item"></div>
+        </div>
+        <div class="big" style="margin-top:-280px;">
+            <h4 style="font-size:20px;color:black;margin-left:120px;margin-top: 5px;">14</h4>
+            <h1 style="font-size:70px;color:black;margin-top:-10px;margin-left:10px;">Si</h1>
+            <p style="margin-top:-35px;color:black;margin-left:10px;font-size:20px;">Silicon</p>
+        </div>
+        <div id="id4" class="column" style="margin-left:-152px;">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id4" class="column">
+            <div class="item" style="margin-top:235px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div id="id2" class="column">
+            <div class="item" style="margin-top:85px;background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+        <div id="id2" class="column">
+            <div class="item" style="margin-top:85px;background-color:rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+        <div id="id2" class="column">
+            <div class="item" style="margin-top:85px;background-color:rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: orangered;"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+        <div id="id2" class="column">
+            <div class="item" style="margin-top:85px;background-color:rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgb(22, 194, 22);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: rgba(114, 13, 78, 0.864);"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+        <div id="id5" class="column">
+            <div class="item" style="margin-top:85px;"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+        <div id="id6" class="column">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item" style="background-color: rgba(60, 44, 53, 0.864);"></div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:100px;margin-left:330px;">
+        <div class="box" style="color:white;font-size:x-large;text-align: center;">La</div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="row" style="margin-top:0px;margin-left:330px;">
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2" style="color:rgb(0, 0, 0);font-size:x-large;text-align:center;">Am</div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2" style="color:rgb(0, 0, 0);font-size:x-large;text-align:center;">No</div>
+    </div>
+    </div>
+</body>
+</html>
