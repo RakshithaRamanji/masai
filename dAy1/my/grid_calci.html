@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap:5px; /* Adjust the value to reduce the space between buttons */
+            width: 350px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .button {
+            margin: 0;
+            padding: 10px;
+            background-color: #ffffff;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            width: 50px; /* Adjust the width of the buttons */
+            height: 50px; /* Adjust the height of the buttons */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button:hover {
+            background-color: #ffffff;
+        }
+
+        .input {
+            grid-column: span 4;
+            margin-bottom:-10px; /* Adjust the value to reduce the space below the input field */
+            padding: 10px;
+            font-size: 20px;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .input-container {
+            grid-column: span 4;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+            height: 40px;
+            width: 325px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(14, 108, 96); margin-left: 640px;">Masai Calculator</h1>
+    <div class="calculator">
+        <div class="input-container"></div>
+        <input type="text" class="input" disabled >
+        <div class="button">1</div>
+        <div class="button">2</div>
+        <div class="button">3</div>
+        <div class="button" style="background-color: black; color: white;">+</div>
+        <div class="button">4</div>
+        <div class="button">5</div>
+        <div class="button">6</div>
+        <div class="button" style="background-color: black; color: white;">-</div>
+        <div class="button">7</div>
+        <div class="button">8</div>
+        <div class="button">9</div>
+        <div class="button" style="background-color: black; color: white;">x</div>
+        <div class="button" style="background-color: rgb(254, 0, 0); color: white;">C</div>
+        <div class="button">0</div>
+        <div class="button" style="background-color: black; color: white;">=</div>
+        <div class="button" style="background-color: black; color: white;">/</div>
+    </div>
+</body>
+</html>
