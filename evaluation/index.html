@@ -5,46 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiggy</title>
     <style>
-         .band {
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        width: 1529px;
-        height: 20px;
-        background-color: #ffffff;
-        padding: 30px;
-    }
-    button{
-         border-width: 1px;
-         background-color:red;
-         color: rgb(255, 255, 255);
-         width:90px;
-         height:30px;
-         font-size:14px;
-         margin-left:370px;
-         border-bottom-left-radius: 10%;
-         border-bottom-right-radius: 10%;
-         border-top-left-radius: 10%;
-         border-top-right-radius: 10%;
+        .band {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 1529px;
+            height: 20px;
+            background-color: #ffffff;
+            padding: 30px;
         }
-    .image-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: rgb(6, 6, 33);
-        height: 300px ;
-        margin-top:-35px;
-    }
-    .image-container img {
-        width: 220px;
-        height:200px;
-    }
-    .card {
+
+        button {
+            border-width: 1px;
+            background-color: red;
+            color: rgb(255, 255, 255);
+            width: 90px;
+            height: 30px;
+            font-size: 14px;
+            margin-left: 370px;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%;
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(6, 6, 33);
+            height: 300px;
+            margin-top: -35px;
+        }
+
+        .image-container img {
+            width: 220px;
+            height: 200px;
+        }
+
+        .card {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 5px; /* Adjust the value to set the desired gap between images */
-            background-color:whitesmoke;
+            background-color: whitesmoke;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -55,49 +59,51 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background-color:white;
+            background-color: white;
+            height: 220px;
+            width: 300px;
         }
 
         .card-item img {
-            width:250px;
-            height:200px;
+            margin-top: 20px;
+            width: 250px;
+            height: 200px;
             border-radius: 5px;
         }
-.imagecon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(207, 207, 211);
-    padding: 20px;
-}
 
-.imagecon-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        .imagecon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+            padding: 10px;
+        }
 
-.imagecon-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(207, 207, 211);
-    height: 200px;
-    width: 200px;
-    margin: 10px;
-}
+        .imagecon-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin: auto;
+        }
 
-.imagecon-item img {
-    width: 180px;
-    height: 180px;
-    border-radius: 5px;
-}
+        .imagecon-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px; /* Adjust the margin as per your preference */
+        }
 
+        .imagecon-item img {
+            width: 250px;
+            height: 300px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+
     <div class="band">
         <img style="width:40px; height:50px; margin-top: 0px; background-color: transparent;" src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2023-03-02/logo_742606.png" alt="logo">
         <div class="text" style="margin-left: 250px;color: rgb(0, 187, 255);font-weight:bold ;">Search</div>
@@ -162,19 +168,18 @@
             <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda velit eius molestias doloribus eius molestias</p>
             <p style="text-align: center;">$250</p>
         </div>
-
-        <div class="imagecon">
-            <h1>OUR PICKS FOR YOU</h1>
-            <div class="imagecon-row">
-                <div class="imagecon-item">
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 2">
-                </div>
-                <div class="imagecon-item">
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 3">
-                </div>
-                <div class="imagecon-item">
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 4">
-                </div>
+    </div>
+    <div class="imagecon" style="margin-top:130px;">
+        <h1>OUR PICKS FOR YOU</h1>
+        <div class="imagecon-row">
+            <div class="imagecon-item">
+                <img style="margin-left:100px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 2">
+            </div>
+            <div class="imagecon-item">
+                <img style="margin-left:100px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 3">
+            </div>
+            <div class="imagecon-item">
+                <img  style="margin-left:100px;"src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Offers_yqoiuk" alt="Image 4">
             </div>
         </div>
     </div>

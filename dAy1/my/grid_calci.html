@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Grid Calculator</title>
     <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+
         .calculator {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap:5px; /* Adjust the value to reduce the space between buttons */
-            width: 350px;
+            grid-gap: 20px; /* Increase the value to create more spacing between buttons */
+            width: 410px;
             height: 500px;
-            margin: 0 auto;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 30px; /* Add extra spacing at the margins */
         }
 
         .button {
@@ -40,51 +47,41 @@
 
         .input {
             grid-column: span 4;
-            margin-bottom:-10px; /* Adjust the value to reduce the space below the input field */
-            padding: 10px;
-            font-size: 20px;
-            text-align: right;
-            border: none;
-            border-radius: 5px;
-        }
-        
-        .input-container {
-            grid-column: span 4;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding: 10px;
+            padding: 5px;
             background-color: #ffffff;
             border: 1px solid #ffffff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            margin-top: 10px;
-            height: 40px;
-            width: 325px;
+            margin-bottom: 10px;
+            height: 60px;
+            width: 350px;
+            margin-left: 30px;
         }
+        
     </style>
 </head>
 <body>
-    <h1 style="color: rgb(14, 108, 96); margin-left: 640px;">Masai Calculator</h1>
     <div class="calculator">
-        <div class="input-container"></div>
-        <input type="text" class="input" disabled >
-        <div class="button">1</div>
+        <div class="input" style="margin-top: 30px;"> </div>
+        <div class="button" style="margin-left: 30px;">1</div>
         <div class="button">2</div>
         <div class="button">3</div>
-        <div class="button" style="background-color: black; color: white;">+</div>
-        <div class="button">4</div>
+        <div class="button" style="background-color: black; color: white;margin-right: 30px;">+</div>
+        <div class="button" style="margin-left: 30px;">4</div>
         <div class="button">5</div>
         <div class="button">6</div>
-        <div class="button" style="background-color: black; color: white;">-</div>
-        <div class="button">7</div>
+        <div class="button" style="background-color: black; color: white;margin-right: 30px;">-</div>
+        <div class="button" style="margin-left: 30px;">7</div>
         <div class="button">8</div>
         <div class="button">9</div>
-        <div class="button" style="background-color: black; color: white;">x</div>
-        <div class="button" style="background-color: rgb(254, 0, 0); color: white;">C</div>
-        <div class="button">0</div>
-        <div class="button" style="background-color: black; color: white;">=</div>
-        <div class="button" style="background-color: black; color: white;">/</div>
+        <div class="button" style="background-color: black; color: white;margin-right: 30px;">x</div>
+        <div class="button" style="background-color: rgb(254, 0, 0); color: white;margin-bottom:30px;margin-left: 30px;">C</div>
+        <div class="button"  style=" margin-bottom:30px;">0</div>
+        <div class="button" style="background-color: black; color: white;margin-bottom:30px;">=</div>
+        <div class="button" style="background-color: black; color: white;margin-bottom:30px;margin-right: 30px;">/</div>
     </div>
 </body>
 </html>
