@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFEE SHOP</title>
+    <style>
+        @media screen and (max-width: 720px) {
+    .card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .cofe > h2 {
+        font-size: 16px;
+    }
+    .rate {
+        font-size: 10px !important;
+        margin-top: 15px !important;
+    }
+    .container {
+        padding:20px;
+    }
+}
+        .cofe {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 10px 10px 10px 30px rgba(213, 180, 140, 0.1);
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 50px;
+            height: 100%;
+        }
+
+        .card {
+            display: grid;
+            width: 80%;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 150px;
+            margin: auto;
+            grid-gap: 60px;
+            margin-top:30px;
+        }
+
+        .rate {
+            text-align: right;
+            font-size: 18px;
+            font-family: sans-serif;
+            color: goldenrod;
+            font-weight: bold;
+            margin-top: -45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="cofe">
+                <h2>Cappuccino</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Americano</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Espresso</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="cofe">
+                <h2>Macchiato</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Mocha</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Coffee Latte</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="cofe">
+                <h2>Piccolo Latte</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Ristretto</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+            <div class="cofe">
+                <h2>Affogato</h2>
+                <p class="rate">$49</p>
+                <p style="font-size:20px;color:gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic a dolore.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
