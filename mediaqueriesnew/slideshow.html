@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .slideshow-container img {
+            display: none;
+            width: 500px;
+            height:400px;
+        }
+
+        .slideshow-container img.active {
+            display: block;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left:40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ6ZUWOsJH2HRP80gOKRiffvLHKfsbo89VtE09cSIR7A&s"  alt="1">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeo-SteSRwHKspsffNjY8vFfVy95lia4qbzvh1PM-k&s"  alt="2">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2sUhSaD0kDscCURxArUaugChqvqGktgeg7AmYvV56&s" alt="3">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgOQshe18tGASQjPyDAIbKICHVo22DM6dhAk4sbiCED373-eUPZC54mK1iTQkkCgi42yY&usqp=CAU" alt="4">
+        <img class="slide" src="https://wallpapercave.com/wp/s3X06zT.jpg" alt="5">
+        <img class="slide" src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg" alt="6">
+        <img class="slide" src="https://cdn.wallpapersafari.com/29/92/9VWQiO.jpg" alt="7">
+        <img class="slide" src="https://images.unsplash.com/photo-1539667468225-eebb663053e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="8">
+        <img class="slide" src="https://i.pinimg.com/originals/cf/5d/f7/cf5df7e4e7804644a43be3f66a224b9d.jpg" alt="9">
+        <img class="slide" src="https://wallpaperaccess.com/full/393735.jpg" alt="10">
+        <img class="slide" src="https://wallpapercave.com/wp/wp6565541.jpg" alt="11">
+        <img class="slide" src="https://cdn.wallpapersafari.com/59/3/xXbF2f.jpg" alt="12">
+        <img class="slide" src="https://wallpaper.dog/large/10766033.jpg" alt="13">
+        <img class="slide" src="https://m.media-amazon.com/images/I/81A+qqYaYFL._AC_UF894,1000_QL80_.jpg" alt="14">
+        <img class="slide" src="https://images.unsplash.com/photo-1535463731090-e34f4b5098c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fG5hdHVyYWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="15">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZL0eDuXbAU-N1CumZRQw5huqpiSAvrAGsow&usqp=CAU" alt="16">
+        <img class="slide" src="https://t3.ftcdn.net/jpg/05/48/56/38/360_F_548563894_s5tGFJjPhc7lp5uG4iJkR77QbgvrKr9e.jpg" alt="17">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqw6rLQB1yeMXmcNYz7l_6F7kSRNhzWhF-YQ&usqp=CAU" alt="18">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8YmNWqevO5hCjqrcFqbz_DnQg9KsvC8hRNg&usqp=CAU" alt="19">
+        <img class="slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN2Zfq_M9Hh74hDnTQfb7FSECLSSDrsxLQTQ&usqp=CAU" alt="20">
+
+        <div>
+            <button class="button" onclick="toggleSlideshow()">Start/Stop</button>
+            <button class="button" onclick="previousSlide()">Previous</button>
+            <button class="button" onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        var slides = document.getElementsByClassName("slide");
+        var currentIndex = 0;
+        var intervalId;
+
+        function toggleSlideshow() {
+            if (intervalId) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+        }
+
+        function startSlideshow() {
+            intervalId = setInterval(nextSlide, 2000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        function nextSlide() {
+            stopSlideshow();
+            showSlide(currentIndex + 1);
+        }
+
+        function previousSlide() {
+            stopSlideshow();
+            showSlide(currentIndex - 1);
+        }
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            slides[index].classList.add("active");
+            currentIndex = index;
+        }
+
+        // Start the slideshow initially
+        startSlideshow();
+    </script>
+</body>
+</html>
