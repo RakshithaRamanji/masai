@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Clock</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .timer-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-left: -20px;
+        }
+
+        .unit-box {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 30px;
+            background-color: rgb(28, 25, 70);
+        }
+
+        .unit-label {
+            font-weight:normal;
+            font-size: 20px;
+        }
+
+        .unit-value {
+            font-size: 88px;
+        }
+
+        #timer-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #timer-box {
+            width: 520px;
+            height: 150px;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 68px;
+            background-color: rgb(57, 56, 56);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer-box">
+        <div id="timer-container" class="timer-box">
+            <div class="unit-box" style="margin-left:10px;">
+                <span class="unit-value" id="hours">00</span>
+            </div>
+            <span class="unit-label" style="margin-top:140px;margin-left:-80px;">Hours</span>
+            <span style="font-weight: bolder; margin-left:50px;">:</span>
+            <div class="unit-box">
+                <span class="unit-value" id="minutes">00</span>
+            </div>
+            <span class="unit-label" style="margin-top:140px;margin-left:-90px;">Minutes</span>
+            <span style="font-weight: bolder; margin-left:50px;">:</span>
+            <div class="unit-box">
+                <span class="unit-value" id="seconds">00</span>
+            </div>
+            <span class="unit-label" style="margin-top:140px;margin-left:-90px;">Seconds</span>
+        </div>
+    </div>
+
+    <script>
+        function startTimer() {
+            var hoursElement = document.getElementById("hours");
+            var minutesElement = document.getElementById("minutes");
+            var secondsElement = document.getElementById("seconds");
+            var hours = 0;
+            var minutes = 0;
+            var seconds = 0;
+
+            setInterval(function () {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes === 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+
+                hoursElement.textContent = formatTime(hours);
+                minutesElement.textContent = formatTime(minutes);
+                secondsElement.textContent = formatTime(seconds);
+            }, 1000);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+
+        startTimer();
+    </script>
+</body>
+</html>
