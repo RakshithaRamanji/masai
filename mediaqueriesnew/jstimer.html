@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .button {
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        input[type="input"] {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="input" id="input-hours" min="0" placeholder="Hours">
+        <input type="input" id="input-minutes" min="0" max="59" placeholder="Minutes">
+        <input type="input" id="input-seconds" min="0" max="59" placeholder="Seconds">
+    </div>
+
+    <div>
+        <button class="button" onclick="startTimer()">Start</button>
+        <button class="button" onclick="pauseTimer()">Pause</button>
+        <button class="button" onclick="resetTimer()">Reset</button>
+    </div>
+
+    <script>
+        var intervalId;
+        var hoursElement = document.getElementById("input-hours");
+        var minutesElement = document.getElementById("input-minutes");
+        var secondsElement = document.getElementById("input-seconds");
+
+        function startTimer() {
+            var hours = parseInt(hoursElement.value) || 0;
+            var minutes = parseInt(minutesElement.value) || 0;
+            var seconds = parseInt(secondsElement.value) || 0;
+
+            intervalId = setInterval(function() {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        if (hours === 0) {
+                            clearInterval(intervalId);
+                            return;
+                        }
+                        hours--;
+                        minutes = 59;
+                    } else {
+                        minutes--;
+                    }
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+
+                hoursElement.value = formatTime(hours);
+                minutesElement.value = formatTime(minutes);
+                secondsElement.value = formatTime(seconds);
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(intervalId);
+        }
+
+        function resetTimer() {
+            clearInterval(intervalId);
+            hoursElement.value = 0;
+            minutesElement.value = 0;
+            secondsElement.value = 0;
+        }
+
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+</body>
+</html>
