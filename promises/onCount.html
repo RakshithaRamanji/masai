@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise on Count</title>
+</head>
+<body>
+    <script>
+        var count = prompt("Enter a count value:"); // count as input
+
+        var promise = new Promise(function(resolve, reject) {
+        if (parseInt(count) > 0) {
+            resolve("Positive count");
+        } else {
+            reject("negative count");
+        }
+        });
+
+        promise
+        .then(function(res) {
+            console.log(res);
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+    </script>
+</body>
+</html>
