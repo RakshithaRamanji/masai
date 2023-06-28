@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product List</title>
+  <style>
+    #categorySelect {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    #searchInput {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    #productList {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .productCard {
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 10px;
+      padding: 10px;
+    }
+    .productCard img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <select id="categorySelect">
+    <option value="all">All Categories</option>
+    <option value="men's clothing">Men's Wear</option>
+    <option value="women's clothing">Women's Wear</option>
+    <option value="jewelery">Jewelry</option>
+    <option value="electronics">Electric Gadget</option>
+  </select>
+  <input type="text" id="searchInput" placeholder="Search by title...">
+  <div id="productList"></div>
+
+  <script>
+    // Fetch products from the API
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(products => {
+        displayProducts(products); // Display all products initially
+      })
+      .catch(error => {
+        console.log('Error fetching products:', error);
+      });
+
+    function displayProducts(products) {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = ''; // Clear previous product list
+
+      const categorySelect = document.getElementById('categorySelect');
+      const selectedCategory = categorySelect.value.toLowerCase();
+
+      const searchInput = document.getElementById('searchInput');
+      const searchKeyword = searchInput.value.trim().toLowerCase();
+
+      const filteredProducts = products.filter(product => {
+        const isCategoryMatch =
+          selectedCategory === 'all' || product.category.toLowerCase() === selectedCategory;
+
+        const isTitleMatch = product.title.toLowerCase().includes(searchKeyword);
+
+        return isCategoryMatch && isTitleMatch;
+      });
+
+      filteredProducts.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('productCard');
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p>Price: $${product.price}</p>
+          <p>Category: ${product.category}</p>
+        `;
+
+        productList.appendChild(card);
+      });
+    }
+
+    // Event listeners
+    const categorySelect = document.getElementById('categorySelect');
+    categorySelect.addEventListener('change', displayProducts);
+
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', displayProducts);
+  </script>
+</body>
+</html>
