@@ -1,94 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Product List</title>
+  <title>FETCH CLOTHING</title>
   <style>
-    #categorySelect {
-      margin-bottom: 10px;
-      padding: 5px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
     }
-    #searchInput {
-      margin-bottom: 10px;
-      padding: 5px;
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
     }
-    #productList {
-      display: flex;
-      flex-wrap: wrap;
+
+    #search-form {
+      margin-bottom: 20px;
     }
-    .productCard {
-      width: 300px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      margin: 10px;
-      padding: 10px;
-    }
-    .productCard img {
-      max-width: 100%;
-      height: auto;
+
+    #search-input, #category {
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
-  <select id="categorySelect">
-    <option value="all">All Categories</option>
-    <option value="men's clothing">Men's Wear</option>
-    <option value="women's clothing">Women's Wear</option>
-    <option value="jewelery">Jewelry</option>
-    <option value="electronics">Electric Gadget</option>
-  </select>
-  <input type="text" id="searchInput" placeholder="Search by title...">
-  <div id="productList"></div>
+  <div id="search-form">
+    <input type="text" id="search-input" placeholder="Search by title">
+    <select id="category">
+      <option value="">All Categories</option>
+      <option value="men's clothing">Men's Clothing</option>
+      <option value="women's clothing">Women's Clothing</option>
+      <option value="jewelery">Jewelery</option>
+      <option value="electronics">Electronics</option>
+    </select>
+    <button onclick="filterProducts()">Search</button>
+  </div>
+
+  <table id="product-table">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+  </table>
 
   <script>
-    // Fetch products from the API
-    fetch('https://fakestoreapi.com/products')
-      .then(response => response.json())
-      .then(products => {
-        displayProducts(products); // Display all products initially
-      })
-      .catch(error => {
-        console.log('Error fetching products:', error);
-      });
+    // Fetch products from API
+    function fetchProducts() {
+      fetch('https://fakestoreapi.com/products')
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem('products', JSON.stringify(data));
+          displayProducts(data);
+        })
+        .catch((error) => console.log(error));
+    }
 
+    // Display products in the table
     function displayProducts(products) {
-      const productList = document.getElementById('productList');
-      productList.innerHTML = ''; // Clear previous product list
+      const table = document.getElementById('product-table');
+      table.innerHTML = `
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Image</th>
+        </tr>
+      `;
 
-      const categorySelect = document.getElementById('categorySelect');
-      const selectedCategory = categorySelect.value.toLowerCase();
-
-      const searchInput = document.getElementById('searchInput');
-      const searchKeyword = searchInput.value.trim().toLowerCase();
-
-      const filteredProducts = products.filter(product => {
-        const isCategoryMatch =
-          selectedCategory === 'all' || product.category.toLowerCase() === selectedCategory;
-
-        const isTitleMatch = product.title.toLowerCase().includes(searchKeyword);
-
-        return isCategoryMatch && isTitleMatch;
-      });
-
-      filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.classList.add('productCard');
-        card.innerHTML = `
-          <img src="${product.image}" alt="${product.title}">
-          <h3>${product.title}</h3>
-          <p>Price: $${product.price}</p>
-          <p>Category: ${product.category}</p>
+      products.forEach((product) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${product.id}</td>
+          <td>${product.title}</td>
+          <td>${product.description}</td>
+          <td>${product.category}</td>
+          <td>$${product.price}</td>
+          <td><img src="${product.image}" alt="${product.title}" width="50" height="50"></td>
         `;
-
-        productList.appendChild(card);
+        table.appendChild(row);
       });
     }
 
-    // Event listeners
-    const categorySelect = document.getElementById('categorySelect');
-    categorySelect.addEventListener('change', displayProducts);
+    // Filter products based on category and title
+    function filterProducts() {
+      const category = document.getElementById('category').value;
+      const search = document.getElementById('search-input').value.toLowerCase();
 
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', displayProducts);
+      let products = JSON.parse(localStorage.getItem('products'));
+      let filteredProducts = products;
+
+      if (category) {
+        filteredProducts = products.filter(
+          (product) => product.category.toLowerCase() === category.toLowerCase()
+        );
+      }
+
+      if (search) {
+        filteredProducts = filteredProducts.filter((product) =>
+          product.title.toLowerCase().includes(search)
+        );
+      }
+
+      displayProducts(filteredProducts);
+    }
+
+    // Fetch and display products on page load
+    window.onload = function () {
+      fetchProducts();
+    };
   </script>
 </body>
 </html>
