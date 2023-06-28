@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODD EVEN PROMISE</title>
+</head>
+<body></body>
+    <script>
+        function getData(data) {
+        return new Promise(function(resolve, reject) {
+            if (typeof data !== "number") {
+            reject("error");
+            } else if (data % 2 === 0) {
+            setTimeout(function() {
+                resolve("even");
+            }, 4000);
+            } else {
+            setTimeout(function() {
+                resolve("odd");
+            }, 2000);
+            }
+        });
+        }
+    </script>
+</html>
